@@ -6,4 +6,4 @@
 - **Servidor BD:** datos centralizados.
 
 ## Diagrama de Despliegue
-![Diagrama de Despliegue](./images/deployment.png)
+![Diagrama de Despliegue](docs/images/deployment.png)
