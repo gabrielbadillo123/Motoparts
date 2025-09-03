@@ -1,0 +1,20 @@
+@startuml
+actor Vendedor as v
+participant "Frontend SPA" as spa
+participant "Backend API" as api
+database "Base de Datos" as db
+participant "Servicio Facturación" as fact
+
+v -> spa: Ingresa datos de la venta
+spa -> api: POST /ventas (cliente, productos, cantidades)
+api -> db: Verificar stock
+db --> api: Stock disponible
+
+api -> fact: Generar factura electrónica (PDF/XML)
+fact --> api: Factura generada
+
+api -> db: Actualizar inventario
+api --> spa: Confirmación + factura
+
+spa --> v: "Venta registrada con éxito"
+@enduml

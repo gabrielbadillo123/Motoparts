@@ -1,0 +1,18 @@
+@startuml
+node "Cliente (Usuario)" {
+  artifact "Navegador Web"
+}
+
+node "Servidor Web/App" {
+  artifact "Frontend (React SPA)"
+  artifact "Backend (Spring Boot API)"
+}
+
+node "Servidor BD" {
+  database "ERP_DB (PostgreSQL/MySQL)"
+}
+
+"Navegador Web" --> "Frontend (React SPA)"
+"Frontend (React SPA)" --> "Backend (Spring Boot API)"
+"Backend (Spring Boot API)" --> "ERP_DB (PostgreSQL/MySQL)"
+@enduml

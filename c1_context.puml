@@ -1,0 +1,24 @@
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+
+Person(vendedor, "Vendedor", "Registra ventas y genera facturación.")
+Person(inventario, "Encargado de Inventario", "Controla stock en tiempo real.")
+Person(gerente, "Gerente", "Consulta reportes estratégicos.")
+Person(admin, "Administrador", "Gestiona clientes y proveedores.")
+Person(cliente, "Cliente", "Compra productos en línea.")
+
+System(erp, "ERP Motoparts", "Sistema central de gestión de ventas e inventario.")
+
+System_Ext(facturacion, "Servicio de Facturación Electrónica", "Genera facturas digitales.")
+System_Ext(contabilidad, "Sistema Contable", "Procesa información financiera.")
+
+Rel(vendedor, erp, "Registra ventas")
+Rel(inventario, erp, "Monitorea stock")
+Rel(gerente, erp, "Recibe reportes")
+Rel(admin, erp, "Administra clientes/proveedores")
+Rel(cliente, erp, "Consulta productos y compra")
+
+Rel(erp, facturacion, "Envía datos de facturas")
+Rel(erp, contabilidad, "Exporta reportes financieros")
+
+@enduml

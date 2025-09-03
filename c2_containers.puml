@@ -1,0 +1,22 @@
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+Person(vendedor, "Vendedor")
+Person(inventario, "Encargado de Inventario")
+Person(admin, "Administrador")
+Person(gerente, "Gerente")
+
+System_Boundary(erp, "ERP Motoparts") {
+    Container(spa, "Frontend SPA", "React", "Interfaz de usuario en navegador")
+    Container(api, "Backend API", "Java Spring Boot", "Lógica de negocio y validación")
+    ContainerDb(db, "Base de Datos", "PostgreSQL/MySQL", "Persistencia de productos, clientes, ventas")
+}
+
+Rel(vendedor, spa, "Usa")
+Rel(inventario, spa, "Usa")
+Rel(admin, spa, "Usa")
+Rel(gerente, spa, "Usa")
+
+Rel(spa, api, "Hace peticiones REST", "HTTPS/JSON")
+Rel(api, db, "Lee y escribe datos", "JDBC")
+@enduml
