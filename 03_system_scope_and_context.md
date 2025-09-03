@@ -12,4 +12,4 @@ El sistema interactúa con actores humanos y sistemas externos.
 - Sistema contable.
 
 ## Diagrama de Contexto
-![Diagrama de Contexto](./images/c1_context.png)
+![Diagrama de Contexto](docs/images/c1_context.png)
