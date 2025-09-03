@@ -10,4 +10,4 @@
 5. Factura se envía al correo del cliente.
 
 ## Diagrama de Secuencia
-![Diagrama de Secuencia](./images/sequence_register_sale.png)
+![Diagrama de Secuencia](docs/images/sequence_register_sale.png)
